@@ -33,7 +33,7 @@ jobs:
           run: grep -i "dragon" dragon.txt
 
     deploy_job3:
-        needs: [test_job_2]
+        needs: test_job_2
         runs-on: ubutnu-latest
         steps:
         - name: download dragon text file
