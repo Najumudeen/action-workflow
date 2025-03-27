@@ -12,3 +12,10 @@ How you run multiple jobs in your single workflow
 
 Note: Each jobs runs on different virtual machine
 
+3 jobs run paraell
+
+We have to setup jobs run as sequence manner
+
+needs keyword
+------ 
+
