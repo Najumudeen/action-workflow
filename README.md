@@ -19,3 +19,9 @@ We have to setup jobs run as sequence manner
 needs keyword
 ------ 
 
+How to share the files from one job to another job?
+
+Go to github market place and search for download and upload build artifact
+
+@actions/upload-artifact
+@actions/download-artifact
