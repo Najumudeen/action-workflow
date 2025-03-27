@@ -33,8 +33,8 @@ jobs:
           run: grep -i "dragon" dragon.txt
 
     deploy_job3:
-        needs: test_job_2
-        runs-on: ubutnu-latest
+        needs: [test_job_2]
+        runs-on: ubuntu-latest
         steps:
         - name: download dragon text file
           uses: actions/download-artifact@v4
