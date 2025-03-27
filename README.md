@@ -25,3 +25,6 @@ Go to github market place and search for download and upload build artifact
 
 @actions/upload-artifact
 @actions/download-artifact
+
+
+How store environment variable in the workflow?
