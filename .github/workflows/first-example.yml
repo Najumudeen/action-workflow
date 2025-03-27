@@ -17,8 +17,8 @@ jobs:
 
 # Install and Use Thrid Party Libraries
 
-        - name: Generate ASCII Artwork
-          run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+        # - name: Generate ASCII Artwork
+        #   run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
 
         # - name: list files
         #   run: ls -ltr
