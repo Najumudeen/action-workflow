@@ -28,3 +28,12 @@ Go to github market place and search for download and upload build artifact
 
 
 How store environment variable in the workflow?
+
+
+Triggering a workflow? list of events link as below
+
+https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
+
+workflow_dispath events
+
+you can provide input values with input type
