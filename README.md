@@ -84,3 +84,11 @@ strategy:
     fail-fast: false # by default it's true. it going cancel any job running on the queue when the job fails.
     max-parallel: 2  # no of jobs run simultaneously
 
+Access Workflow Context
+-------------------------
+
+How to access the context in to your workflow
+
+https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs
+
+
