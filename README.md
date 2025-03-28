@@ -102,3 +102,92 @@ Skipping workflows runs
 
 https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs
 
+Add the following item into commit message to skip the workflow
+
+[skip ci]
+[ci skip]
+[no ci]
+[skip actions]
+[actions skip]
+
+Debug logging
+-------------
+
+1. Runner diagnostic logging
+2. Step debug logging
+
+
+Git Hub rest API to view the logs or download it.
+
+https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28
+
+
+Workflow_dispatch Input Options
+-------------------------------
+
+https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions
+
+
+Trigger Events
+---------------
+
+ push
+ pull_request
+ schedule
+ workflow_call
+ workflow_dispatch
+ repository_dispatch
+ workflow_run
+ status
+ watch
+ release
+
+Trigger Workflows for Manual Events
+
+ workflow_dispatch
+ -----------------
+
+ inputs message
+
+ repository_dispatch
+---------------------
+
+ trigger any workflow sending custom http request to the github.
+
+ on:
+  repository_dispatch:
+    types: [system_result]
+
+data payload you can use the event_types
+
+-d { "event_type": "system_result",
+ "system_payload": {
+  "mesage": "Error: API Timeout"
+ }}
+
+workflow_run
+------------
+
+workflow based on completion 
+
+example: 2 separate workflow and wait for first job to be completed and then run second run
+
+name: FIRST_DEPLOY_WORKFLOW_DEMO
+on:
+   workflow_run:
+     workflows: [SECOND_BUILD_WORKFLOW_DEMO, any-other-worfloe-name]
+
+
+name: SECOND_DEPLOY_WORKFLOW_DEMO
+on:
+   push:
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - run: echo 'Job build'
+    
+workflow_call
+-------------
+
+complex workflows to bytable chunks
