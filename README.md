@@ -97,3 +97,8 @@ https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow
 
 
 Some random text
+
+Skipping workflows runs
+
+https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs
+
