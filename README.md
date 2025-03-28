@@ -66,5 +66,6 @@ By default github acion automatically kill after 6 hous.
 step level
 job level
 
+The action 'Docker Run' has timed out after 1 minutes.
 
 
