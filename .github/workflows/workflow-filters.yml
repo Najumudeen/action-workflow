@@ -13,12 +13,12 @@ on:
         - '!feature/*' # ignoring pushing to any branch name starting with feature using!
   pull_request:
     types:
-        - opened
-        - closed
+      - opened
+      - closed
     paths-ignore:    # workflow will only run when a pull request that includes a change on any file other than
-        - README.md
+      - README.md
     branches:
-        - main         # target specific branches
+      - main         # target specific branches
 
 jobs:
     hello:
