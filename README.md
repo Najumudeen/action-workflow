@@ -57,3 +57,14 @@ concurrency:
           group: production-deplopyment
           cancel-in-progress: flase
 
+A job in this workflow is waiting for deploy to complete before running
+
+Timeout for Jobs and Steps
+
+By default github acion automatically kill after 6 hous.
+
+step level
+job level
+
+
+
