@@ -43,3 +43,17 @@ Using Job Concurrency
 
 How approximately the job runs
 
+First job will with following error
+
+concurrency:
+          group: production-deplopyment
+          cancel-in-progress: true
+
+Canceling since a higher priority waiting request for production-deplopyment exists
+
+Second job will wait until the first job completed.
+
+concurrency:
+          group: production-deplopyment
+          cancel-in-progress: flase
+
