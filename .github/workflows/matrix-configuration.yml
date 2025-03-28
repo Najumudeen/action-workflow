@@ -7,9 +7,17 @@ on:
 jobs:
     deploy-on-ubuntu:
         strategy:
+            fail-fast: false # by default it's true. it going cancel any job running on the queue when the job fails.
+            max-parallel: 2  # no of jobs run simultaneously
             matrix:
                 os: [ubuntu-latest, ubuntu-20.04, windows-latest]
                 images: [hello-world, alpine]
+                exclude:
+                  - images: alpine
+                    os: windows-latest
+                include:
+                  - images: amd64/alpine 
+                    os: ubuntu-20.04
         runs-on: ${{ matrix.os }}
         steps:
         - name: Echo Docker Details

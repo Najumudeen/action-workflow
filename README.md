@@ -72,3 +72,15 @@ What is main use matrix keywords here?
 
   if we have multiple os version and run mutiple images to just avoid not use multiple line of codes.
 
+
+Additional feature of matrix strategy
+
+  jobs are run in parallel
+
+  exclude keyword # not run 
+  include keyword # only run matcing senario
+
+strategy:
+    fail-fast: false # by default it's true. it going cancel any job running on the queue when the job fails.
+    max-parallel: 2  # no of jobs run simultaneously
+
