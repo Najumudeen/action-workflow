@@ -79,7 +79,7 @@ What is main use matrix keywords here?
   include keyword # only run matcing senario
 
 strategy:
-    fail-fast: false # by default it's true. it going cancel any job running on the queue when the job fails.
+    fail-fast: false # by default it's true. it going cancel any job running on the queue when the job fails.<br/>
     max-parallel: 2  # no of jobs run simultaneously
 
 ### Access Workflow Context
