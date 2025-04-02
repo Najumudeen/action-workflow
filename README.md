@@ -1,6 +1,6 @@
 # action-workflow
 
-3 core components for github action
+### Three main components for GitHub action
 
 ```
 workflows
@@ -8,15 +8,12 @@ jobs
 steps
 ```
 
-How execute the shell script with in your workflow?
+How do you execute the shell script in your workflow?
 
 How you run multiple jobs in your single workflow
 
-Note: Each jobs runs on different virtual machine
-
-3 jobs run paraell
-
-We have to setup jobs run as sequence manner
+> [!Note]
+> Each job runs on a different virtual machine, and three jobs run simultaneously. We need to configure up jobs to execute sequentially.
 
 ### needs keyword
 
@@ -24,10 +21,10 @@ How to share the files from one job to another job?
 
 Go to github market place and search for download and upload build artifact
 
+```
 @actions/upload-artifact
 @actions/download-artifact
-
-
+```
 How store environment variable in the workflow?
 
 Triggering a workflow? list of events link [events-that-trigger-workflows](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows)
@@ -35,7 +32,6 @@ Triggering a workflow? list of events link [events-that-trigger-workflows](https
 ### workflow_dispath events
 
 you can provide input values with input type
-
 
 ### Using Job Concurrency
 
@@ -86,20 +82,14 @@ strategy:
 
 ### Access Workflow Context
 
-How to access the context in to your workflow
+How to access the context in to your workflow : [accessing-contextual-information-about-workflow-runs(]https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs)
 
-https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs
-
-Using If Expression in Jobs
-
-https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions
-
+Using If Expression in Jobs : [evaluate-expressions-in-workflows-and-actions](
+https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions)
 
 Some random text
 
-Skipping workflows runs
-
-https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs
+Skipping workflows runs : [skipping-workflow-runs](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs)
 
 Add the following item into commit message to skip the workflow
 ```
@@ -115,15 +105,11 @@ Add the following item into commit message to skip the workflow
 1. Runner diagnostic logging
 2. Step debug logging
 
-
-Git Hub rest API to view the logs or download it.
-
-https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28
-
+Github rest API to view the logs or download it. [workflows](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28)
 
 ### Workflow_dispatch Input Options
 
-https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions
+[workflow-syntax-for-github-actions](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 
 
 ### Trigger Events
@@ -147,32 +133,37 @@ Trigger Workflows for Manual Events
 
 ### repository_dispatch
 
- trigger any workflow sending custom http request to the github.
+Trigger any workflow sending custom http request to the github.
 
+```
  on:
   repository_dispatch:
     types: [system_result]
+```
 
-data payload you can use the event_types
+Data payload you can use the event_types
 
+```
 -d { "event_type": "system_result",
  "system_payload": {
   "mesage": "Error: API Timeout"
  }}
+```
 
 ### workflow_run
 
 workflow based on completion 
 
-example: 2 separate workflow and wait for first job to be completed and then run second run
+Example: 2 separate workflow and wait for first job to be completed and then run second run
 
+```
 name: FIRST_DEPLOY_WORKFLOW_DEMO
 on:
    workflow_run:
      workflows: [SECOND_BUILD_WORKFLOW_DEMO, any-other-worfloe-name]
 
-
 name: SECOND_DEPLOY_WORKFLOW_DEMO
+
 on:
    push:
 jobs:
@@ -180,7 +171,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - run: echo 'Job build'
-    
+```  
 ### workflow_call
 
 complex workflows to bytable chunks
