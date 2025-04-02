@@ -33,25 +33,27 @@ Triggering a workflow? list of events link [events-that-trigger-workflows](https
 
 you can provide input values with input type
 
-### Using Job Concurrency
+### Using job concurrency
 
 How approximately the job runs
 
-First job will with following error
+First job with following error
 
 ```
 concurrency:
-          group: production-deplopyment
-          cancel-in-progress: true
+  group: production-deplopyment
+  cancel-in-progress: true
 ```
 
 Canceling since a higher priority waiting request for production-deplopyment exists
 
 Second job will wait until the first job completed.
 
+```
 concurrency:
-          group: production-deplopyment
-          cancel-in-progress: flase
+  group: production-deplopyment
+  cancel-in-progress: flase
+```
 
 A job in this workflow is waiting for deploy to complete before running
 
@@ -62,7 +64,7 @@ By default github acion automatically kill after `6 hours`.
 step level
 job level
 
-The action 'Docker Run' has timed out after 1 minutes.
+The action `Docker Run` has timed out after `1 minutes`.
 
 What is main use matrix keywords here?
 
@@ -82,7 +84,7 @@ strategy:
 
 ### Access Workflow Context
 
-How to access the context in to your workflow : [accessing-contextual-information-about-workflow-runs(]https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs)
+How to access the context in to your workflow : [accessing-contextual-information-about-workflow-runs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs)
 
 Using If Expression in Jobs : [evaluate-expressions-in-workflows-and-actions](
 https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions)
